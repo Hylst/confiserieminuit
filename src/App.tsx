@@ -1,3 +1,4 @@
+import { InfoModal } from './components/InfoModal';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
   ActiveCustomer,
@@ -74,6 +75,7 @@ const INITIAL_JARS: Record<CandyId, CandyJarState> = {
 };
 
 export function App() {
+  const [showInfo, setShowInfo] = useState(false);
   // Core Currencies & Progression
   const [shards, setShards] = useState<number>(35);
   const [reputation, setReputation] = useState<number>(12);
@@ -1036,6 +1038,18 @@ export function App() {
         }}
         onStartNextNight={handleStartNextNight}
       />
+
+      {/* Bouton Infos technique */}
+      <button
+        onClick={() => setShowInfo(true)}
+        className="fixed top-2.5 right-2.5 z-[100] flex items-center gap-1 rounded-lg border border-slate-700/60 bg-slate-900/80 px-2 py-1 text-xs text-amber-200 shadow-md backdrop-blur hover:bg-slate-800 transition cursor-pointer select-none"
+        title="Comment ce jeu a été fait"
+        aria-label="Infos sur le jeu"
+      >
+        <span>ℹ️</span>
+        <span className="hidden sm:inline">Infos</span>
+      </button>
+      <InfoModal isOpen={showInfo} onClose={() => setShowInfo(false)} />
     </main>
   );
 }
