@@ -16,5 +16,5 @@ Simulation de boutique ensorcelée : concocte des friandises maudites en suivant
 - 100% statique, sans serveur ni collecte de donnees
 
 ## Contact
-- Email : geoffroy.streit@gmail.com
+- Email : geoffroy.streit@ik.me
 - Plateforme : https://games.hylst.fr/
